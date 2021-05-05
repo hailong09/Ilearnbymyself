@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 const authRoutes = require('./routes/auth')
 const postRoutes = require('./routes/post');
-const PORT = 8080 || process.env.PORT;
+const PORT = 5000 || process.env.PORT;
 // const dbUrll = 
 
 const connectDB = async () => {

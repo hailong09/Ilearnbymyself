@@ -1,4 +1,7 @@
-export const apiUrl = process.env.NODE_ENV !== 'production' ? 'https://mysterious-lowlands-41648.herokuapp.com/api' : "https://pure-earth-38900.herokuapp.com/api";
+
+export const apiUrl =
+process.env.NODE_ENV !== 'production'
+    ? 'https://mysterious-lowlands-41648.herokuapp.com/api' : "https://mysterious-lowlands-41648.herokuapp.com/api"
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learnint-mern'
 
@@ -14,4 +17,4 @@ export const UPDATE_POST = "UPDATE_POST"
 
 export const FIND_POST = "FIND_POST"
 
-// http://localhost:8080/api
+// http://localhost:5000/api
