@@ -1,4 +1,4 @@
-export const apiUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080/api' : "";
+export const apiUrl = process.env.NODE_ENV !== 'production' ? "http://localhost:8080/api" : "";
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learnint-mern'
 
@@ -13,3 +13,5 @@ export const  DEL_POST = " DEL_POST"
 export const UPDATE_POST = "UPDATE_POST"
 
 export const FIND_POST = "FIND_POST"
+
+// http://localhost:8080/api
