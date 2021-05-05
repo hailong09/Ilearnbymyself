@@ -27,8 +27,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/auth', authRoutes)
-app.use('/api/posts', postRoutes);
+app.use('/api/auth',cors(), authRoutes)
+app.use('/api/posts', cors() , postRoutes);
 
 
 app.listen(PORT, () => console.log(`Server lisneing on port ${PORT}`))

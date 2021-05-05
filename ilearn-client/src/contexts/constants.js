@@ -1,4 +1,4 @@
-export const apiUrl = process.env.NODE_ENV !== 'production' ? 'https://immense-basin-76181.herokuapp.com/api' : "https://pure-earth-38900.herokuapp.com/api";
+export const apiUrl = process.env.NODE_ENV !== 'production' ? 'https://mysterious-lowlands-41648.herokuapp.com/api' : "https://pure-earth-38900.herokuapp.com/api";
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'learnint-mern'
 
