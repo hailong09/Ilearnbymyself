@@ -26,7 +26,7 @@ connectDB();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:8080', 'https://mysterious-lowlands-41648.herokuapp.com/'],
+    origin: ['http://localhost:8080', 'https://mysterious-lowlands-41648.herokuapp.com/api/'],
     credentials: true
 }));
 
