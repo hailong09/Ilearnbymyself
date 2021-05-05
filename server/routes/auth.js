@@ -2,6 +2,8 @@ const express = require('express');
 const  router = express.Router();
 const jwt = require('jsonwebtoken');
 const argon2 = require('argon2');
+const cors = require('cors');
+
 
 const User = require('../models/User');
 const verifyToken = require('../middlewares/auth');
@@ -9,7 +11,7 @@ const verifyToken = require('../middlewares/auth');
 //@route Get api/auth
 //@desc Check if usr is logged in
 //@access Public
-router.get('/', verifyToken, async (req, res) => {
+router.get('/', cors() ,verifyToken, async (req, res) => {
     try {
         const user = await User.findById(req.userId).select('-password');
         if(!user) return res.status(400).json({ success: false, message: 'User not found' })
@@ -23,7 +25,7 @@ router.get('/', verifyToken, async (req, res) => {
 // @route POST api/auth/signup
 // @desc sign up user
 // @access Public
-router.post('/signup', async (req, res) => {
+router.post('/signup', cors() , async (req, res) => {
    const {username, password} = req.body;
     if(!username || !password){
         return res.status(400).json({
@@ -62,7 +64,7 @@ router.post('/signup', async (req, res) => {
 // @desc sign in user
 // @access Public
 
-router.post('/signin', async (req, res) => {
+router.post('/signin', cors() , async (req, res) => {
     const {username, password} = req.body;
     if(!username || !password) return res.status(400).json({success: false, message: 'Missing username and/or password'})
     try {
