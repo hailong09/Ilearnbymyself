@@ -25,10 +25,7 @@ const connectDB = async () => {
 connectDB();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(cors({
-    origin: ['http://localhost:8080', 'https://mysterious-lowlands-41648.herokuapp.com/api/'],
-    credentials: true
-}));
+app.use(cors());
 
 app.use('/api/auth', authRoutes)
 app.use('/api/posts', postRoutes);
