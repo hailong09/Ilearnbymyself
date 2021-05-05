@@ -11,7 +11,7 @@ const verifyToken = require('../middlewares/auth');
 //@route Get api/auth
 //@desc Check if usr is logged in
 //@access Public
-router.get('/', cors() ,verifyToken, async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
     try {
         const user = await User.findById(req.userId).select('-password');
         if(!user) return res.status(400).json({ success: false, message: 'User not found' })
@@ -25,7 +25,7 @@ router.get('/', cors() ,verifyToken, async (req, res) => {
 // @route POST api/auth/signup
 // @desc sign up user
 // @access Public
-router.post('/signup', cors() , async (req, res) => {
+router.post('/signup', async (req, res) => {
    const {username, password} = req.body;
     if(!username || !password){
         return res.status(400).json({
@@ -64,7 +64,7 @@ router.post('/signup', cors() , async (req, res) => {
 // @desc sign in user
 // @access Public
 
-router.post('/signin', cors() , async (req, res) => {
+router.post('/signin', async (req, res) => {
     const {username, password} = req.body;
     if(!username || !password) return res.status(400).json({success: false, message: 'Missing username and/or password'})
     try {

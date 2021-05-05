@@ -25,10 +25,13 @@ const connectDB = async () => {
 connectDB();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:8080', 'https://mysterious-lowlands-41648.herokuapp.com/'],
+    credentials: true
+}));
 
 app.use('/api/auth', authRoutes)
-app.use('/api/posts' , postRoutes);
+app.use('/api/posts', postRoutes);
 
 
 app.listen(PORT, () => console.log(`Server lisneing on port ${PORT}`))
